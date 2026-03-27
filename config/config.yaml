@@ -1,0 +1,103 @@
+# Coding Standards Extractor Configuration
+
+watch:
+  # File extensions to watch
+  extensions:
+    - .md
+    - .markdown
+    - .yaml
+    - .yml
+    - .json
+    - .txt
+    - .rst
+
+  # Watch subdirectories recursively
+  recursive: true
+
+  # Debounce delay in seconds (prevents duplicate events)
+  debounce_delay: 1.0
+
+extraction:
+  # Output format for extracted policies
+  output_format: json
+
+  # Include code examples in extraction
+  include_examples: true
+
+  # Minimum description length to consider as policy
+  min_description_length: 10
+
+  # Severity detection settings
+  severity:
+    default: recommended
+    patterns:
+      required:
+        - must
+        - shall
+        - required
+        - always
+        - never
+        - mandatory
+      recommended:
+        - should
+        - recommend
+        - prefer
+        - consider
+      optional:
+        - may
+        - optional
+        - can
+        - could
+
+  # Category detection keywords
+  categories:
+    naming:
+      - naming
+      - name
+      - identifier
+      - variable
+      - function
+      - class
+    formatting:
+      - format
+      - indent
+      - spacing
+      - whitespace
+      - style
+    documentation:
+      - document
+      - comment
+      - docstring
+      - readme
+    testing:
+      - test
+      - coverage
+      - assertion
+      - mock
+    security:
+      - security
+      - auth
+      - credential
+      - password
+      - secret
+    performance:
+      - performance
+      - optimize
+      - cache
+      - memory
+    error_handling:
+      - error
+      - exception
+      - try
+      - catch
+      - handle
+    architecture:
+      - architecture
+      - pattern
+      - structure
+      - module
+      - import
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
